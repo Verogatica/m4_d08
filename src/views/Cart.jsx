@@ -68,7 +68,7 @@ const Cart = () => {
             <button
               className={`btn btn-primary col-12 rounded-pill mt-4 ${!(token && user) ? 'disabled' : ''}`}
               disabled={!(token && user)}
-              onClick={handleCheckout} // Llama a la función de handleCheckout desde el contexto
+              onClick={handleCheckout} 
             >
               Continuar con el pago
             </button>

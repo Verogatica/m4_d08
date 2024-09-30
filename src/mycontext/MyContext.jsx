@@ -32,10 +32,9 @@ const MyContextProvider = ({ children }) => {
                 const data = await response.json();
                 setUser(data.email); 
             } else {
-                throw new Error('Failed to fetch user profile');
+                throw new Error;
             }
         } catch (error) {
-            console.error('Error fetching user profile:', error);
         }
     };
 
@@ -93,10 +92,8 @@ const MyContextProvider = ({ children }) => {
                 setUser({ email: data.email }); 
             } else {
                 const errorData = await response.json();
-                console.error('Login failed:', errorData.message);
             } 
         } catch (error) {
-            console.error('Error during login:', error);
         }
     };
     
@@ -120,7 +117,7 @@ const MyContextProvider = ({ children }) => {
                 throw new Error('Registration failed');
             }
         } catch (error) {
-            console.error('Error during registration:', error);
+            console.error('Error', error);
         }
     };
 
@@ -137,7 +134,6 @@ const MyContextProvider = ({ children }) => {
                 }),
             });
         } catch (error) {
-            console.error('Error during checkout:', error);
         }
     };
 
@@ -149,10 +145,9 @@ const MyContextProvider = ({ children }) => {
                 alert("Compra realizada con éxito!");
                 setCart([]); 
             } catch (error) {
-                alert("Hubo un problema al realizar la compra. Intenta nuevamente.");
             }
         } else {
-            alert("Por favor, agrega productos al carrito o inicia sesión.");
+            alert("No hay productos en tu carrito.");
         }
     };
 
